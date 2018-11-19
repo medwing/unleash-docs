@@ -1,0 +1,13 @@
+{
+  "documentation": {
+    "Getting Started": ["getting_started"],
+    "First Category": ["doc2"],
+    "Second Category": ["doc3"]
+  },
+  "api": {
+    "Client": ["api/client/features", "api/client/register", "api/client/metrics"],
+    "Admin": ["api/admin/features", "api/admin/strategies", "api/admin/metrics", "api/admin/events" ],
+    "Internal": ["api/itnernal" ]
+    
+  }
+}
