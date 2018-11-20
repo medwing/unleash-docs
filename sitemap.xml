@@ -18,6 +18,7 @@
 <url> <loc>https://unleash.github.io/docs/database_schema</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/database_schema" /> </url>
 <url> <loc>https://unleash.github.io/docs/developer_guide</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/developer_guide" /> </url>
 <url> <loc>https://unleash.github.io/docs/getting_started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/getting_started" /> </url>
+<url> <loc>https://unleash.github.io/docs/</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/" /> </url>
 <url> <loc>https://unleash.github.io/docs/migration_guide</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/migration_guide" /> </url>
 <url> <loc>https://unleash.github.io/docs/securing_unleash</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/securing_unleash" /> </url>
 <url> <loc>https://unleash.github.io/docs/unleash_context</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/unleash_context" /> </url>
