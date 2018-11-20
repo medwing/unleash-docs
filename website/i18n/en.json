@@ -5,6 +5,9 @@
     "previous": "Previous",
     "tagline": "Enterprise ready feature toggle service",
     "docs": {
+      "activation_strategy": {
+        "title": "Activation Strategies"
+      },
       "api/admin/events": {
         "title": "/api/admin/events"
       },
@@ -32,21 +35,29 @@
       "api/internal": {
         "title": "/internal-backstage/prometheus"
       },
+      "client_specification": {
+        "title": "Client Specification"
+      },
+      "database_backup": {
+        "title": "Database Backup"
+      },
+      "database_schema": {
+        "title": "Database Schema"
+      },
+      "developer_guide": {
+        "title": "Developer guide"
+      },
       "getting_started": {
-        "title": "Latin-ish",
-        "sidebar_label": "Getting Started"
+        "title": "Getting Started"
       },
-      "doc2": {
-        "title": "document number 2"
+      "migration_guide": {
+        "title": "Migration Guide"
       },
-      "doc3": {
-        "title": "This is document number 3"
+      "securing_unleash": {
+        "title": "Securing Unleash"
       },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+      "unleash_context": {
+        "title": "Unleash Context"
       }
     },
     "links": {
@@ -56,8 +67,7 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "First Category": "First Category",
-      "Second Category": "Second Category",
+      "Developer Guide": "Developer Guide",
       "Client": "Client",
       "Admin": "Admin",
       "Internal": "Internal"

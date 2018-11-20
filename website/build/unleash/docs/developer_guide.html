@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Developer guide · Unleash</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;postgresql&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#postgresql&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PostgreSQL&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Developer guide · Unleash"/><meta property="og:type" content="website"/><meta property="og:url" content="https://unleash.github.io/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;postgresql&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#postgresql&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PostgreSQL&lt;/h2&gt;
+"/><meta property="og:image" content="https://unleash.github.io/img/unleash_logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://unleash.github.io/img/unleash_logo.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-inverted.png" alt="Unleash"/><h2 class="headerTitleWithLogo">Unleash</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting_started" target="_self">Documentation</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Developer Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting_started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/securing_unleash">Securing Unleash</a></li><li class="navListItem"><a class="navItem" href="/docs/unleash_context">Unleash Context</a></li><li class="navListItem"><a class="navItem" href="/docs/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/client_specification">Client Specification</a></li><li class="navListItem"><a class="navItem" href="/docs/migration_guide">Migration Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Developer Guide</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/developer_guide">Developer guide</a></li><li class="navListItem"><a class="navItem" href="/docs/database_schema">Database Schema</a></li><li class="navListItem"><a class="navItem" href="/docs/database_backup">Database Backup</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Developer guide</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="postgresql"></a><a href="#postgresql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PostgreSQL</h2>
+<p>To run and develop unleash you need to have PostgreSQL database (PostgreSQL v.9.5.x or newer) locally.</p>
+<h3><a class="anchor" aria-hidden="true" id="create-a-local-unleash-databases-in-postgres"></a><a href="#create-a-local-unleash-databases-in-postgres" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a local unleash databases in postgres</h3>
+<pre><code class="hljs css language-bash">$ psql postgres &lt;&lt;SQL
+CREATE USER unleash_user WITH PASSWORD <span class="hljs-string">'passord'</span>;
+CREATE DATABASE unleash;
+GRANT ALL PRIVILEGES ON DATABASE unleash to unleash_user;
+CREATE DATABASE unleash_test;
+GRANT ALL PRIVILEGES ON DATABASE unleash_test to unleash_user;
+SQL
+</code></pre>
+<p>Then set env vars:</p>
+<p>(Optional as unleash will assume these as default values).</p>
+<pre><code class="hljs"><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">DATABASE_URL</span>=postgres://unleash_user:passord@localhost:5432/unleash
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">TEST_DATABASE_URL</span>=postgres://unleash_user:passord@localhost:5432/unleash_test
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="postgresql-with-docker"></a><a href="#postgresql-with-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PostgreSQL with docker</h2>
+<p>If you dont want to install PostgreSQL locally you can spin up an instance with docker.
+We have created a script to ease this process: <code>scripts/docker-postgres.sh</code></p>
+<h2><a class="anchor" aria-hidden="true" id="commands"></a><a href="#commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Commands</h2>
+<pre><code class="hljs">// <span class="hljs-keyword">Install</span> dependencies
+npm <span class="hljs-keyword">install</span>
+
+// <span class="hljs-keyword">Start</span> <span class="hljs-keyword">server</span> <span class="hljs-keyword">in</span> development
+npm <span class="hljs-keyword">start</span>:dev
+
+// Unleash UI
+<span class="hljs-keyword">http</span>://localhost:<span class="hljs-number">4242</span>
+
+// API:
+<span class="hljs-keyword">http</span>://localhost:<span class="hljs-number">4242</span>/api/
+
+// <span class="hljs-keyword">Execute</span> tests <span class="hljs-keyword">in</span> all packages:
+npm <span class="hljs-keyword">test</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="database-changes"></a><a href="#database-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Database changes</h2>
+<p>We use database migrations to track database changes.</p>
+<h3><a class="anchor" aria-hidden="true" id="making-a-schema-change"></a><a href="#making-a-schema-change" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Making a schema change</h3>
+<p>In order to run migrations you will set the environment variable for DATABASE_URL</p>
+<p><code>export DATABASE_URL=postgres://unleash_user:passord@localhost:5432/unleash</code></p>
+<p>Use db-migrate to create new migrations file.</p>
+<pre><code class="hljs css language-bash">&gt; npm run db-migrate -- create YOUR-MIGRATION-NAME
+</code></pre>
+<p>All migrations require one <code>up</code> and one <code>down</code> method.</p>
+<p>Example of a typical migration:</p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">/* eslint camelcase: "off" */</span>
+<span class="hljs-meta">'use strict'</span>;
+
+exports.up = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">db, cb</span>) </span>{
+    db.createTable(<span class="hljs-string">'examples'</span>, {
+        <span class="hljs-attr">id</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'int'</span>, <span class="hljs-attr">primaryKey</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">notNull</span>: <span class="hljs-literal">true</span> },
+        <span class="hljs-attr">created_at</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'timestamp'</span>, <span class="hljs-attr">defaultValue</span>: <span class="hljs-string">'now()'</span> },
+    }, cb);
+};
+
+exports.down = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">db, cb</span>) </span>{
+    <span class="hljs-keyword">return</span> db.dropTable(<span class="hljs-string">'examples'</span>, cb);
+};
+</code></pre>
+<p>Test your migrations:</p>
+<pre><code class="hljs css language-bash">&gt; npm run db-migrate -- up
+&gt; npm run db-migrate -- down
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="publishing-releasing-new-packages"></a><a href="#publishing-releasing-new-packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publishing / Releasing new packages</h2>
+<p>Please run <code>npm run nsp</code> nad <code>npm run test</code> checks before publishing.</p>
+<p>Run <code>npm run publish</code> to start the publishing process.</p>
+<p><code>npm run publish:dry</code></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/migration_guide"><span class="arrow-prev">← </span><span>Migration Guide</span></a><a class="docs-next button" href="/docs/database_schema"><span>Database Schema</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#postgresql">PostgreSQL</a><ul class="toc-headings"><li><a href="#create-a-local-unleash-databases-in-postgres">Create a local unleash databases in postgres</a></li></ul></li><li><a href="#postgresql-with-docker">PostgreSQL with docker</a></li><li><a href="#commands">Commands</a></li><li><a href="#database-changes">Database changes</a><ul class="toc-headings"><li><a href="#making-a-schema-change">Making a schema change</a></li></ul></li><li><a href="#publishing-releasing-new-packages">Publishing / Releasing new packages</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting_started.html">Getting Started</a><a href="/docs/en/securing_unleash.html">Securing Unleash</a><a href="/docs/en/api.html">API Reference</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/tags/unleash" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 FINN.no</section></footer></div></body></html>

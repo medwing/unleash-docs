@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Database Backup · Unleash</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;When upgrading to a new major version of Unleash it is advised to do a&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Database Backup · Unleash"/><meta property="og:type" content="website"/><meta property="og:url" content="https://unleash.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;When upgrading to a new major version of Unleash it is advised to do a&lt;/p&gt;
+"/><meta property="og:image" content="https://unleash.github.io/img/unleash_logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://unleash.github.io/img/unleash_logo.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-inverted.png" alt="Unleash"/><h2 class="headerTitleWithLogo">Unleash</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting_started" target="_self">Documentation</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Developer Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting_started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/securing_unleash">Securing Unleash</a></li><li class="navListItem"><a class="navItem" href="/docs/unleash_context">Unleash Context</a></li><li class="navListItem"><a class="navItem" href="/docs/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/client_specification">Client Specification</a></li><li class="navListItem"><a class="navItem" href="/docs/migration_guide">Migration Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Developer Guide</h3><ul><li class="navListItem"><a class="navItem" href="/docs/developer_guide">Developer guide</a></li><li class="navListItem"><a class="navItem" href="/docs/database_schema">Database Schema</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/database_backup">Database Backup</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Database Backup</h1></header><article><div><span><p>When upgrading to a new major version of Unleash it is advised to do a
+full database backup to ease rollback in case of failures.</p>
+<ol>
+<li>Create a database backup:</li>
+</ol>
+<pre><code class="hljs">pg_dump <span class="hljs-comment">--clean -U unleash_user -W -h localhost unleash &gt; unleash-db.dump</span>
+
+</code></pre>
+<ol start="2">
+<li>Restore from a backup:</li>
+</ol>
+<pre><code class="hljs">psql -U unleash_user -W -h localhost unleash &lt; unleash-db<span class="hljs-selector-class">.dump</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/database_schema"><span class="arrow-prev">← </span><span>Database Schema</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting_started.html">Getting Started</a><a href="/docs/en/securing_unleash.html">Securing Unleash</a><a href="/docs/en/api.html">API Reference</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/tags/unleash" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 FINN.no</section></footer></div></body></html>
