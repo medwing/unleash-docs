@@ -34,18 +34,11 @@
 <li>UNLEASH-APPNAME: appName</li>
 <li>UNLEASH-INSTANCEID: instanceId</li>
 </ul>
-<p>This endpoint is the one all clients should use to fetch all available feature toggles
-from the <em>unleash-server</em>. The response returns all active feature toggles and their
-current strategy configuration. A feature toggle will have <em>at least</em> one configured strategy.
-A strategy will have a <code>name</code> and <code>parameters</code> map.</p>
+<p>This endpoint is the one all clients should use to fetch all available feature toggles from the <em>unleash-server</em>. The response returns all active feature toggles and their current strategy configuration. A feature toggle will have <em>at least</em> one configured strategy. A strategy will have a <code>name</code> and <code>parameters</code> map.</p>
 <blockquote>
-<p><em>Note:</em> Clients should prefer the <code>strategies</code> property.
-Legacy properties (<code>strategy</code> &amp; <code>parameters</code>) will be kept until <strong>version 2</strong> of the format.</p>
+<p><em>Note:</em> Clients should prefer the <code>strategies</code> property. Legacy properties (<code>strategy</code> &amp; <code>parameters</code>) will be kept until <strong>version 2</strong> of the format.</p>
 </blockquote>
-<p>This endpoint should never return anything besides a valid <em>20X or 304-response</em>. It will also
-include an <code>Etag</code>-header. The value of this header can be used by clients as the value of
-the <code>If-None-Match</code>-header in the request to prevent a data transfer if the client already
-has the latest response locally.</p>
+<p>This endpoint should never return anything besides a valid <em>20X or 304-response</em>. It will also include an <code>Etag</code>-header. The value of this header can be used by clients as the value of the <code>If-None-Match</code>-header in the request to prevent a data transfer if the client already has the latest response locally.</p>
 <p><strong>Example response:</strong></p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"version"</span>: <span class="hljs-number">1</span>,
@@ -91,8 +84,7 @@ has the latest response locally.</p>
 </code></pre>
 <p>You may limit the response by sending a <code>namePrefix</code> query-parameter.</p>
 <p><code>GET: http://unleash.host.com/api/client/features/:featureName</code></p>
-<p>Used to fetch details about a specific feature toggle. This is mainly provided to make it easy to
-debug the API and should not be used by the client implementations.</p>
+<p>Used to fetch details about a specific feature toggle. This is mainly provided to make it easy to debug the API and should not be used by the client implementations.</p>
 <blockquote>
 <p><em>Notice</em>: You will not get a version property when fetching a specific feature toggle by name.</p>
 </blockquote>

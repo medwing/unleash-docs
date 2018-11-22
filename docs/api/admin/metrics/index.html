@@ -30,28 +30,17 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">/api/admin/metrics</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="this-document-describes-the-metrics-endpoint-for-admin-ui"></a><a href="#this-document-describes-the-metrics-endpoint-for-admin-ui" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>This document describes the metrics endpoint for admin ui</h1>
 <h3><a class="anchor" aria-hidden="true" id="seen-toggles"></a><a href="#seen-toggles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Seen-toggles</h3>
 <p><code>GET http://unleash.host.com/api/admin/seen-toggles</code></p>
-<p>This enpoints returns a list of applications and what toogles
-unleash has seend for each application. It will only guarantee
-toggles reported by client applications within the last hour, but
-will in most cases remember seen-toggles for applications longer</p>
+<p>This enpoints returns a list of applications and what toogles unleash has seend for each application. It will only guarantee toggles reported by client applications within the last hour, but will in most cases remember seen-toggles for applications longer</p>
 <p><strong>Example response:</strong></p>
 <pre><code class="hljs css language-json">[
   {
     <span class="hljs-attr">"appName"</span>: <span class="hljs-string">"demo-app"</span>,
-    <span class="hljs-attr">"seenToggles"</span>: [
-      <span class="hljs-string">"add-feature-2"</span>,
-      <span class="hljs-string">"toggle-2"</span>,
-      <span class="hljs-string">"toggle-3"</span>
-    ],
+    <span class="hljs-attr">"seenToggles"</span>: [<span class="hljs-string">"add-feature-2"</span>, <span class="hljs-string">"toggle-2"</span>, <span class="hljs-string">"toggle-3"</span>],
     <span class="hljs-attr">"metricsCount"</span>: <span class="hljs-number">127</span>
   },
   {
     <span class="hljs-attr">"appName"</span>: <span class="hljs-string">"demo-app-2"</span>,
-    <span class="hljs-attr">"seenToggles"</span>: [
-      <span class="hljs-string">"add-feature-2"</span>,
-      <span class="hljs-string">"toggle-2"</span>,
-      <span class="hljs-string">"toggle-3"</span>
-    ],
+    <span class="hljs-attr">"seenToggles"</span>: [<span class="hljs-string">"add-feature-2"</span>, <span class="hljs-string">"toggle-2"</span>, <span class="hljs-string">"toggle-3"</span>],
     <span class="hljs-attr">"metricsCount"</span>: <span class="hljs-number">21</span>
   }
 ]
@@ -64,9 +53,7 @@ will in most cases remember seen-toggles for applications longer</p>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="feature-toggles-metrics"></a><a href="#feature-toggles-metrics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature-Toggles metrics</h3>
 <p><code>GET http://unleash.host.com/api/admin/metrics/feature-toggles</code></p>
-<p>This endpoint gives <em>last minute</em> and <em>last hour</em> metrics for all active toggles. This is based on
-metrics reported by client applications. Yes is the number of times a given feature toggle
-was evaluated to enabled in a client applcation, and no is the number it avaluated to false.</p>
+<p>This endpoint gives <em>last minute</em> and <em>last hour</em> metrics for all active toggles. This is based on metrics reported by client applications. Yes is the number of times a given feature toggle was evaluated to enabled in a client applcation, and no is the number it avaluated to false.</p>
 <p><strong>Example response:</strong></p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"lastHour"</span>: {
@@ -106,17 +93,12 @@ was evaluated to enabled in a client applcation, and no is the number it avaluat
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="applications"></a><a href="#applications" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Applications</h3>
 <p><code>GET http://unleash.host.com/api/admin/applications</code></p>
-<p>This endpoint returns a list of known applications (seen the last two days) and
-a link to follow for more datails.</p>
+<p>This endpoint returns a list of known applications (seen the last two days) and a link to follow for more datails.</p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"applications"</span>: [
     {
       <span class="hljs-attr">"appName"</span>: <span class="hljs-string">"another"</span>,
-      <span class="hljs-attr">"strategies"</span>: [
-        <span class="hljs-string">"default"</span>,
-        <span class="hljs-string">"other"</span>,
-        <span class="hljs-string">"brother"</span>
-      ],
+      <span class="hljs-attr">"strategies"</span>: [<span class="hljs-string">"default"</span>, <span class="hljs-string">"other"</span>, <span class="hljs-string">"brother"</span>],
       <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2016-12-09T14:56:36.730Z"</span>,
       <span class="hljs-attr">"links"</span>: {
         <span class="hljs-attr">"appDetails"</span>: <span class="hljs-string">"/api/admin/applications/another"</span>
@@ -124,11 +106,7 @@ a link to follow for more datails.</p>
     },
     {
       <span class="hljs-attr">"appName"</span>: <span class="hljs-string">"bow"</span>,
-      <span class="hljs-attr">"strategies"</span>: [
-        <span class="hljs-string">"default"</span>,
-        <span class="hljs-string">"other"</span>,
-        <span class="hljs-string">"brother"</span>
-      ],
+      <span class="hljs-attr">"strategies"</span>: [<span class="hljs-string">"default"</span>, <span class="hljs-string">"other"</span>, <span class="hljs-string">"brother"</span>],
       <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2016-12-09T14:56:36.730Z"</span>,
       <span class="hljs-attr">"links"</span>: {
         <span class="hljs-attr">"appDetails"</span>: <span class="hljs-string">"/api/admin/applications/bow"</span>
@@ -138,13 +116,11 @@ a link to follow for more datails.</p>
 }
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="query-params"></a><a href="#query-params" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Params</h4>
-<p>You can also specify the query param: <em>strategyName</em>, which will return all applications
-implementing the given strategy.</p>
+<p>You can also specify the query param: <em>strategyName</em>, which will return all applications implementing the given strategy.</p>
 <p><code>GET http://unleash.host.com/api/admin/applications?strategyName=someStrategyName</code></p>
 <h3><a class="anchor" aria-hidden="true" id="application-details"></a><a href="#application-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application Details</h3>
 <p><code>GET http://unleash.host.com/api/admin/applications/:appName</code></p>
-<p>This endpoint gives insight into details about a client applcation, such as instances,
-strategies implemented and seen toogles.</p>
+<p>This endpoint gives insight into details about a client applcation, such as instances, strategies implemented and seen toogles.</p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"appName"</span>: <span class="hljs-string">"demo-app"</span>,
   <span class="hljs-attr">"instances"</span>: [
@@ -159,22 +135,15 @@ strategies implemented and seen toogles.</p>
       <span class="hljs-attr">"clientIp"</span>: <span class="hljs-string">"::ffff:127.0.0.1"</span>,
       <span class="hljs-attr">"lastSeen"</span>: <span class="hljs-string">"2016-11-30T16:04:15.991Z"</span>,
       <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2016-11-30T10:49:11.223Z"</span>
-    },
+    }
   ],
   <span class="hljs-attr">"strategies"</span>: [
     {
       <span class="hljs-attr">"appName"</span>: <span class="hljs-string">"demo-app"</span>,
-      <span class="hljs-attr">"strategies"</span>: [
-        <span class="hljs-string">"default"</span>,
-        <span class="hljs-string">"extra"</span>
-      ]
+      <span class="hljs-attr">"strategies"</span>: [<span class="hljs-string">"default"</span>, <span class="hljs-string">"extra"</span>]
     }
   ],
-  <span class="hljs-attr">"seenToggles"</span>: [
-    <span class="hljs-string">"add-feature-2"</span>,
-    <span class="hljs-string">"toggle-2"</span>,
-    <span class="hljs-string">"toggle-3"</span>
-  ]
+  <span class="hljs-attr">"seenToggles"</span>: [<span class="hljs-string">"add-feature-2"</span>, <span class="hljs-string">"toggle-2"</span>, <span class="hljs-string">"toggle-3"</span>]
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="seen-applications"></a><a href="#seen-applications" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Seen applications</h3>
@@ -207,9 +176,7 @@ strategies implemented and seen toogles.</p>
       <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2016-12-28T10:39:24.966Z"</span>,
       <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2017-01-06T15:32:41.932Z"</span>,
       <span class="hljs-attr">"description"</span>: <span class="hljs-string">"our other app"</span>,
-      <span class="hljs-attr">"strategies"</span>: [
-        <span class="hljs-string">"default"</span>,
-      ],
+      <span class="hljs-attr">"strategies"</span>: [<span class="hljs-string">"default"</span>],
       <span class="hljs-attr">"url"</span>: <span class="hljs-string">"http://example.com"</span>,
       <span class="hljs-attr">"color"</span>: <span class="hljs-literal">null</span>,
       <span class="hljs-attr">"icon"</span>: <span class="hljs-string">"desktop"</span>
