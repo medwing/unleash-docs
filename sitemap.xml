@@ -13,6 +13,7 @@
 <url> <loc>https://unleash.github.io/docs/api/client/register</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/api/client/register" /> </url>
 <url> <loc>https://unleash.github.io/docs/api/</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/api/" /> </url>
 <url> <loc>https://unleash.github.io/docs/api/internal</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/api/internal" /> </url>
+<url> <loc>https://unleash.github.io/docs/client_sdk</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/client_sdk" /> </url>
 <url> <loc>https://unleash.github.io/docs/client_specification</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/client_specification" /> </url>
 <url> <loc>https://unleash.github.io/docs/database_backup</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/database_backup" /> </url>
 <url> <loc>https://unleash.github.io/docs/database_schema</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://unleash.github.io/docs/database_schema" /> </url>
