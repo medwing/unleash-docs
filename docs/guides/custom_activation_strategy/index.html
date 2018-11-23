@@ -49,24 +49,20 @@
 <p>Before you have provided support for the custom strategy; the client will return false, because it does not understand the activation strategy.</p>
 </blockquote>
 <p>In Node.js the implementation for the <code>TimeStampStrategy</code> would be:</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> moment = <span class="hljs-built_in">require</span>(<span class="hljs-string">'moment'</span>);
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimeStampStrategy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Strategy</span> </span>{
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimeStampStrategy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Strategy</span> </span>{
   <span class="hljs-keyword">constructor</span>() {
     <span class="hljs-keyword">super</span>(<span class="hljs-string">'TimeStamp'</span>);
   }
 
   isEnabled(parameters, context) {
-    <span class="hljs-keyword">const</span> enableAfterTimeStamp = moment(parameters.enableAfter);
-    <span class="hljs-keyword">return</span> moment().isAfter(enableAfterTimeStamp);
+    <span class="hljs-built_in">Date</span>.parse(parameters.enableAfter) &lt; <span class="hljs-built_in">Date</span>.now();
   }
 }
 </code></pre>
 <p>In the example implementation we make use of the library called moment to parse the timestamp and verify that current time is after the specified <code>enabledAfter</code> parameter.</p>
-<p>All parameter injected to the strategy are handled as <code>string</code> objects. This means that the strategies needs to parse it to a more suitable format. In this example we make use of the <a href="https://github.com/moment/moment">moment</a> library. This library makes it also very convenient to check if we have passed the date/time specified via the <code>enabledAfter</code> parameter.</p>
+<p>All parameter injected to the strategy are handled as <code>string</code> objects. This means that the strategies needs to parse it to a more suitable format. In this example we just parse it directly to a <code>Date</code> type and do the comparison directly. You might want to also consider timezone in a real implementation.</p>
 <p>We also have to remember to register the custom strategy when initializing the Unleash client. Full working code example:</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> moment = <span class="hljs-built_in">require</span>(<span class="hljs-string">'moment'</span>);
-<span class="hljs-keyword">const</span> { Strategy, initialize, isEnabled } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'unleash-client'</span>);
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> { Strategy, initialize, isEnabled } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'unleash-client'</span>);
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimeStampStrategy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Strategy</span> </span>{
   <span class="hljs-keyword">constructor</span>() {
@@ -74,8 +70,7 @@
   }
 
   isEnabled(parameters, context) {
-    <span class="hljs-keyword">const</span> enableAfterTimeStamp = moment(parameters.enableAfter);
-    <span class="hljs-keyword">return</span> moment().isAfter(enableAfterTimeStamp);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Date</span>.parse(parameters.enableAfter) &lt; <span class="hljs-built_in">Date</span>.now();
   }
 }
 
