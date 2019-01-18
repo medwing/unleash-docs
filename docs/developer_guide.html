@@ -43,6 +43,9 @@ CREATE DATABASE unleash_test;
 GRANT ALL PRIVILEGES ON DATABASE unleash_test to unleash_user;
 SQL
 </code></pre>
+<blockquote>
+<p>Password is intentionally set to 'passord', which is the Norwegian word for password.</p>
+</blockquote>
 <p>Then set env vars:</p>
 <p>(Optional as unleash will assume these as default values).</p>
 <pre><code class="hljs"><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">DATABASE_URL</span>=postgres://unleash_user:passord@localhost:5432/unleash
