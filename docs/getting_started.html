@@ -85,7 +85,9 @@ unleash
 <ul>
 <li><strong>databaseUrl</strong> - the postgres database url to connect to. Should include username/password.</li>
 <li><strong>databaseSchema</strong> - the postgres database schema to use. Defaults to 'public'.</li>
-<li><strong>port</strong> - which port the unleash-server should bind to.</li>
+<li><strong>port</strong> - which port the unleash-server should bind to. If port is omitted or is 0, the operating system will assign an arbitrary unused port. Will be ignored if pipe is specified.</li>
+<li><strong>host</strong> - which host the unleash-server should bind to. If host is omitted, the server will accept connections on the unspecified IPv6 address (::) when IPv6 is available, or the unspecified IPv4 address (0.0.0.0) otherwise.</li>
+<li><strong>pipe</strong> - parameter to identify IPC endpoints. See <a href="https://nodejs.org/api/net.html#net_identifying_paths_for_ipc_connections">https://nodejs.org/api/net.html#net_identifying_paths_for_ipc_connections</a> for more details</li>
 <li><strong>enableLegacyRoutes</strong> (boolean) - allows you to turn on/off support for legacy routes to support older clients. Enabled by default.</li>
 <li><strong>serverMetrics</strong> (boolean) - use this option to turn on/off prometheus metrics.</li>
 <li><strong>preHook</strong> (function) - this is a hook if you need to provide any middlewares to express before <code>unleash</code> adds any. Express app instance is injected as first argument.</li>
