@@ -101,7 +101,7 @@
       text = <span class="hljs-string">`<span class="hljs-subst">${user}</span> <span class="hljs-subst">${verb}</span> the feature <span class="hljs-subst">${feature}</span>`</span>;
       <span class="hljs-keyword">break</span>;
     }
-    <span class="hljs-keyword">default</span>: {
+    <span class="hljs-attr">default</span>: {
       <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`Unknown event <span class="hljs-subst">${event}</span>`</span>);
       <span class="hljs-keyword">return</span>;
     }
@@ -113,7 +113,7 @@
       {
         <span class="hljs-attr">username</span>: <span class="hljs-string">'Unleash'</span>,
         <span class="hljs-attr">icon_emoji</span>: <span class="hljs-string">':unleash:'</span>, <span class="hljs-comment">// if you added a custom emoji, otherwise you can remove this field.</span>
-        text: text,
+        <span class="hljs-attr">text</span>: text,
       },
     )
     .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
