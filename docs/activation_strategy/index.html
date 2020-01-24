@@ -78,7 +78,7 @@
 <ul>
 <li><strong>DEFAULT</strong> - Unleash chooses the first value present on the context in defined order userId, sessionId, random.</li>
 <li><strong>USERID</strong> - guaranteed to be sticky on userId. If userId not present the behaviour would be false</li>
-<li>**SESSIONID - **guaranteed to be sticky on sessionId. If sessionId not present the behaviour would be false.</li>
+<li><strong>SESSIONID</strong> - guaranteed to be sticky on sessionId. If sessionId not present the behaviour would be false.</li>
 <li><strong>RANDOM</strong> - no stickiness guaranteed. For every isEnabled call it will yield a random true/false based on the selected rollout percentage.</li>
 </ul></li>
 <li><strong>groupId</strong> is used to ensure that different toggles will <strong>hash differently</strong> for the same user. The groupId defaults to <em>feature toggle name</em>, but is overridable by the user to <em>correlate rollout</em> of multiple feature toggles.</li>
