@@ -96,7 +96,6 @@ unleash
 <li><strong>serverMetrics</strong> (boolean) - use this option to turn on/off prometheus metrics.</li>
 <li><strong>preHook</strong> (function) - this is a hook if you need to provide any middlewares to express before <code>unleash</code> adds any. Express app instance is injected as first argument.</li>
 <li><strong>preRouterHook</strong> (function) - use this to register custom express middlewares before the <code>unleash</code> specific routers are added. This is typically how you would register custom middlewares to handle authentication.</li>
-<li><strong>secret</strong> (string) - set this when you want to secure unleash. Used to encrypt the user session.</li>
 <li><strong>adminAuthentication</strong> (string) - use this when implementing custom admin authentication <a href="/docs/securing_unleash">securing-unleash</a>. Possible values are:
 <ul>
 <li><code>none</code> - will disable authentication altogether</li>
