@@ -92,9 +92,10 @@ unleash
 <li><em>user</em> - the database username (<code>DATABASE_USERNAME</code>)</li>
 <li><em>password</em> - the database password (<code>DATABASE_PASSWORD</code>)</li>
 <li><em>host</em> - the database hostname (<code>DATABASE_HOST</code>)</li>
-<li><em>port</em> - the datbase port defaults to 5432 (<code>DATABASE_PORT</code>)</li>
+<li><em>port</em> - the database port defaults to 5432 (<code>DATABASE_PORT</code>)</li>
 <li><em>database</em> - the database name to be used (<code>DATABASE_NAME</code>)</li>
 <li><em>ssl</em> - an object describing ssl options, see <a href="https://node-postgres.com/features/ssl">https://node-postgres.com/features/ssl</a> (<code>DATABASE_SSL</code>, as a stringified json object)</li>
+<li><em>version</em> - the postgres database version. Used to connect a non-standard database. Defaults to <code>undefined</code>, which let the underlying adapter to detect the version automatically. (<code>DATABASE_VERSION</code>)</li>
 </ul></li>
 <li><strong>databaseUrl</strong> - the postgres database url to connect to. Only used if <em>db</em> object is not specified. Should include username/password. This value may also be set via the <code>DATABASE_URL</code> environment variable. Alternatively, if you would like to read the database url from a file, you may set the <code>DATABASE_URL_FILE</code> environment variable with the full file path. The contents of the file must be the database url exactly.</li>
 <li><strong>databaseSchema</strong> - the postgres database schema to use. Defaults to 'public'.</li>
