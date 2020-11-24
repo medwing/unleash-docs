@@ -70,12 +70,14 @@
 <p>Unleash returns a StateService when started, you can use this to import and export data at any time.</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> unleash = <span class="hljs-built_in">require</span>(<span class="hljs-string">'unleash-server'</span>);
 
-unleash.start({...})
-  .then(<span class="hljs-keyword">async</span> ({ stateService }) =&gt; {
-    <span class="hljs-keyword">const</span> exportedData = <span class="hljs-keyword">await</span> stateService.export({<span class="hljs-attr">includeStrategies</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">includeFeatureToggles</span>: <span class="hljs-literal">true</span>});
-    <span class="hljs-keyword">await</span> stateService.import({<span class="hljs-attr">data</span>: exportedData, <span class="hljs-attr">userName</span>: <span class="hljs-string">'import'</span>, <span class="hljs-attr">dropBeforeImport</span>: <span class="hljs-literal">false</span>});
-    <span class="hljs-keyword">await</span> stateService.importFile({<span class="hljs-attr">file</span>: <span class="hljs-string">'exported-data.yml'</span>, <span class="hljs-attr">userName</span>: <span class="hljs-string">'import'</span>, <span class="hljs-attr">dropBeforeImport</span>: <span class="hljs-literal">true</span>})
-  });
+<span class="hljs-keyword">const</span> { services } = <span class="hljs-keyword">await</span> unleash.start({...});
+<span class="hljs-keyword">const</span> { stateService } = services;
+
+<span class="hljs-keyword">const</span> exportedData = <span class="hljs-keyword">await</span> stateService.export({<span class="hljs-attr">includeStrategies</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">includeFeatureToggles</span>: <span class="hljs-literal">true</span>});
+
+<span class="hljs-keyword">await</span> stateService.import({<span class="hljs-attr">data</span>: exportedData, <span class="hljs-attr">userName</span>: <span class="hljs-string">'import'</span>, <span class="hljs-attr">dropBeforeImport</span>: <span class="hljs-literal">false</span>});
+
+<span class="hljs-keyword">await</span> stateService.importFile({<span class="hljs-attr">file</span>: <span class="hljs-string">'exported-data.yml'</span>, <span class="hljs-attr">userName</span>: <span class="hljs-string">'import'</span>, <span class="hljs-attr">dropBeforeImport</span>: <span class="hljs-literal">true</span>})
 </code></pre>
 <p>If you want the database to be cleaned before import (all strategies and features will be removed), set the <code>dropBeforeImport</code> parameter.</p>
 <p>It also possible to not override exiting feature toggles (and strategies) by using the <code>keepExisting</code> parameter.</p>
