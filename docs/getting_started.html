@@ -60,18 +60,29 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Getting Started</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements</h2>
-<p>You will need <strong>Node.js</strong> &gt;= 12 and a <strong>PostgreSQL</strong> &gt;= 10 database instance to be able to run Unleash.</p>
-<p>When starting Unleash you must specify a database URI (can be set as environment variable DATABASE_URL) which includes a username and password, that have rights to migrate the database.</p>
-<p>On startup <em>Unleash</em> will perform necessary migrations if needed.</p>
-<h2><a class="anchor" aria-hidden="true" id="start-unleash"></a><a href="#start-unleash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start Unleash</h2>
-<h3><a class="anchor" aria-hidden="true" id="1-the-simplest-way-to-get-started"></a><a href="#1-the-simplest-way-to-get-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. The simplest way to get started:</h3>
-<pre><code class="hljs css language-bash">$ npm install unleash-server -g
-$ unleash -d postgres://unleash_user:password@localhost:5432/unleash -p 4242
-
-Unleash started on http://localhost:4242
+<p>You will need:</p>
+<ul>
+<li><a href="https://nodejs.org/en/download/"><strong>Node.js</strong></a> (version 12 or later)</li>
+<li><a href="https://www.postgresql.org/download/"><strong>PostgreSQL</strong></a> (version 10 or later)</li>
+<li><a href="/docs/developer_guide">Create an unleash user and database</a>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="start-unleash-server"></a><a href="#start-unleash-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start Unleash server</h2>
+<p>Whichever option you choose to start Unleash, you must specify a database URI (it can be set in the environment variable DATABASE_URL).</p>
+<p>Once the server has started, you will see the message:</p>
+<pre><code class="hljs"><span class="hljs-attribute">Unleash</span> started <span class="hljs-literal">on</span> http://localhost:4242
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="2-or-programmatically"></a><a href="#2-or-programmatically" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Or programmatically:</h3>
-<p>You can also depend on unleash</p>
+<h3><a class="anchor" aria-hidden="true" id="option-one---from-a-terminalbash-shell"></a><a href="#option-one---from-a-terminalbash-shell" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option one - from a terminal/bash shell</h3>
+<pre><code class="hljs"><span class="hljs-attribute">npm</span> install unleash-server -g
+unleash -d postgres://unleash_user:password<span class="hljs-variable">@localhost</span>:5432/unleash -p <span class="hljs-number">4242</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="option-two---from-nodejs"></a><a href="#option-two---from-nodejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option two - from Node.js</h3>
+<ol>
+<li><p>Create a new folder/directory on your development computer.</p></li>
+<li><p>From a terminal/bash shell, install the dependencies:</p>
+<pre><code class="hljs">npm init
+npm <span class="hljs-keyword">install</span> unleash-<span class="hljs-keyword">server</span> <span class="hljs-comment">--save</span>
+</code></pre></li>
+<li><p>Create a file called <em>server.js</em>, paste the following into it and save.</p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> unleash = <span class="hljs-built_in">require</span>(<span class="hljs-string">'unleash-server'</span>);
 
 unleash
@@ -84,8 +95,34 @@ unleash
       <span class="hljs-string">`Unleash started on http://localhost:<span class="hljs-subst">${unleash.app.get(<span class="hljs-string">'port'</span>)}</span>`</span>,
     );
   });
+</code></pre></li>
+<li><p>Run <em>server.js</em>:</p>
+<pre><code class="hljs"><span class="hljs-keyword">node</span> <span class="hljs-title">server</span>.js
+</code></pre></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="option-three---use-docker"></a><a href="#option-three---use-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option three - use Docker</h3>
+<p>Launch the <a href="https://hub.docker.com/r/unleashorg/unleash-server/">Unleash server Docker image</a>.</p>
+<pre><code class="hljs">docker <span class="hljs-builtin-name">run</span> -d -e <span class="hljs-attribute">DATABASE_URL</span>=postgres://user:pass@10.200.221.11:5432/unleash unleashorg/unleash-server
 </code></pre>
-<p>Available unleash options include:</p>
+<h2><a class="anchor" aria-hidden="true" id="test-your-server-and-create-a-sample-api-call"></a><a href="#test-your-server-and-create-a-sample-api-call" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test your server and create a sample API call</h2>
+<p>Once the Unleash server has started, go to <a href="http://localhost:4242">localhost:4242</a> in your browser. If you see a list of example feature toggles, try modifying one of them with <a href="https://curl.se/">curl</a> from a terminal/bash shell:</p>
+<pre><code class="hljs">curl <span class="hljs-params">--location</span> <span class="hljs-params">--request</span> PUT 'http:<span class="hljs-string">//localhost</span><span class="hljs-function">:4242</span>/api/admin/features/Feature.A' <span class="hljs-params">--header</span> 'Content-Type: application/json' <span class="hljs-params">--data-raw</span> '{\
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Feature.A"</span>,\
+  <span class="hljs-string">"description"</span>: <span class="hljs-string">"Dolor sit amet."</span>,\
+  <span class="hljs-string">"type"</span>: <span class="hljs-string">"release"</span>,\
+  <span class="hljs-string">"enabled"</span>: <span class="hljs-literal">false</span>,\
+  <span class="hljs-string">"stale"</span>: <span class="hljs-literal">false</span>,\
+  <span class="hljs-string">"strategies"</span>: [\
+    {\
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"default"</span>,\
+      <span class="hljs-string">"parameters"</span>: {}\
+    }\
+  ]\
+}'\
+</code></pre>
+<!-- The following doesn't seem to fit the 'remit' of Getting started'. it would be a better fit in the developer section of the documentation -->
+## Unleash server options
+<p>Available Unleash options include:</p>
 <ul>
 <li><strong>db</strong> - The database configuration object taking the following properties:
 <ul>
@@ -118,8 +155,8 @@ unleash
 <li><strong>baseUriPath</strong> (string) - use to register a base path for all routes on the application. For example <code>/my/unleash/base</code> (note the starting /). Defaults to <code>/</code>. Can also be configured through the environment variable <code>BASE_URI_PATH</code>.</li>
 <li><strong>secureHeaders</strong> (boolean) - use this to enable security headers (HSTS, CSP, etc) when serving Unleash from HTTPS. Can also be configured through the environment variable <code>SECURE_HEADERS</code>.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="disabling-auto-start"></a><a href="#disabling-auto-start" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Disabling Auto-Start</h4>
-<p>If you're using unleash as part of a larger express app, you can disable the automatic server start by calling <code>server.create</code>. It takes the same options as <code>sevrer.start</code>, but will not begin listening for connections.</p>
+<h3><a class="anchor" aria-hidden="true" id="disabling-auto-start"></a><a href="#disabling-auto-start" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Disabling Auto-Start</h3>
+<p>If you're using Unleash as part of a larger express app, you can disable the automatic server start by calling <code>server.create</code>. It takes the same options as <code>sevrer.start</code>, but will not begin listening for connections.</p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> unleash = <span class="hljs-built_in">require</span>(<span class="hljs-string">'unleash-server'</span>);
 <span class="hljs-comment">// ... const app = express();</span>
 
@@ -133,12 +170,8 @@ unleash
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Unleash app generated and attached to parent application`</span>);
   });
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="3-docker"></a><a href="#3-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Docker</h3>
-<p>You can also use the <a href="https://hub.docker.com/r/unleashorg/unleash-server/">hosted docker image</a> to start the Unleash server</p>
-<pre><code class="hljs css language-sh">docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash unleashorg/unleash-server
-</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="securing-unleash"></a><a href="#securing-unleash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Securing Unleash</h2>
-<p>Unleash also have extension points where you can integrate Unleash with your authentication provider (OAuth 2.0). Read more about <a href="/docs/securing_unleash">securing unleash</a>.</p>
+<p>You can integrate Unleash with your authentication provider (OAuth 2.0). Read more about <a href="/docs/securing_unleash">securing unleash</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="how-do-i-configure-the-log-output"></a><a href="#how-do-i-configure-the-log-output" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How do I configure the log output?</h2>
 <p>By default, <code>unleash</code> uses <a href="https://github.com/nomiddlename/log4js-node">log4js</a> to log important information. It is possible to swap out the logger provider (only when using Unleash programmatically). You do this by providing an implementation of the <strong>getLogger</strong> function as This enables filtering of log levels and easy redirection of output streams.</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLogger</span>(<span class="hljs-params">name</span>) </span>{
@@ -152,4 +185,4 @@ unleash
 }
 </code></pre>
 <p>The logger interface with its <code>debug</code>, <code>info</code>, <code>warn</code> and <code>error</code> methods expects format string support as seen in <code>debug</code> or the JavaScript <code>console</code> object. Many commonly used logging implementations cover this API, e.g., bunyan, pino or winston.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/client_sdk"><span>Client SDK</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirements">Requirements</a></li><li><a href="#start-unleash">Start Unleash</a><ul class="toc-headings"><li><a href="#1-the-simplest-way-to-get-started">1. The simplest way to get started:</a></li><li><a href="#2-or-programmatically">2. Or programmatically:</a></li><li><a href="#3-docker">3. Docker</a></li></ul></li><li><a href="#securing-unleash">Securing Unleash</a></li><li><a href="#how-do-i-configure-the-log-output">How do I configure the log output?</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/client_sdk"><span>Client SDK</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirements">Requirements</a></li><li><a href="#start-unleash-server">Start Unleash server</a><ul class="toc-headings"><li><a href="#option-one---from-a-terminalbash-shell">Option one - from a terminal/bash shell</a></li><li><a href="#option-two---from-nodejs">Option two - from Node.js</a></li><li><a href="#option-three---use-docker">Option three - use Docker</a></li></ul></li><li><a href="#test-your-server-and-create-a-sample-api-call">Test your server and create a sample API call</a></li><li><a href="#unleash-server-options">Unleash server options</a><ul class="toc-headings"><li><a href="#disabling-auto-start">Disabling Auto-Start</a></li></ul></li><li><a href="#securing-unleash">Securing Unleash</a></li><li><a href="#how-do-i-configure-the-log-output">How do I configure the log output?</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
