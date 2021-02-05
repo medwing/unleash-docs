@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Addons Introduction · Unleash</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&gt; This feature was introduced in _Unleash v3.11.0_."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Addons Introduction · Unleash"/><meta property="og:type" content="website"/><meta property="og:url" content="https://unleash.github.io/"/><meta property="og:description" content="&gt; This feature was introduced in _Unleash v3.11.0_."/><meta property="og:image" content="https://unleash.github.io/img/unleash_logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://unleash.github.io/img/unleash_logo.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129659197-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129659197-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-inverted.png" alt="Unleash"/><h2 class="headerTitleWithLogo">Unleash</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting_started" target="_self">Documentation</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Addons</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">User Documentation</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting_started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/configuring_unleash">Configuring Unleash</a></li><li class="navListItem"><a class="navItem" href="/docs/client_sdk">Client SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/feature_toggle_types">Feature Toggle Types</a></li><li class="navListItem"><a class="navItem" href="/docs/toggle_variants">Feature Toggle Variants</a></li><li class="navListItem"><a class="navItem" href="/docs/securing_unleash">Securing Unleash</a></li><li class="navListItem"><a class="navItem" href="/docs/unleash_context">Unleash Context</a></li><li class="navListItem"><a class="navItem" href="/docs/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/client_specification">Client Specification</a></li><li class="navListItem"><a class="navItem" href="/docs/migration_guide">Migration Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Addons</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/addons/">Addons Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/webhook">Webhook</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/jira-commenter">Jira commenter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Developer Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/developer_guide">Developer guide</a></li><li class="navListItem"><a class="navItem" href="/docs/database_schema">Database Schema</a></li><li class="navListItem"><a class="navItem" href="/docs/database_backup">Database Backup</a></li><li class="navListItem"><a class="navItem" href="/docs/import_export">Import &amp; Export</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/guides/google_auth">Google Auth Hook</a></li><li class="navListItem"><a class="navItem" href="/docs/guides/custom_activation_strategy">Custom Activation Strategy</a></li><li class="navListItem"><a class="navItem" href="/docs/guides/feature_updates_to_slack">Feature Updates To slack</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Addons Introduction</h1></header><article><div><span><blockquote>
+<p>This feature was introduced in <em>Unleash v3.11.0</em>.</p>
+</blockquote>
+<p>Unleash Addons allows you to extend Unleash with new functionality. Currently addons allow you to listen to changes in Unleash and trigger updates in other systems, typical via a WebHook.</p>
+<p>Currently Unleash support the following Addons out of the box:</p>
+<ul>
+<li><a href="./webhook">Webhook</a> - A generic way to post messages from Unleash to third party services.</li>
+<li><a href="./slack">Slack</a> - Allows Unleash to post updates to Slack.</li>
+<li><a href="./jira-commenter">Jira Commenter</a> - Allows Unleash to post comments to jira issues (beta).</li>
+</ul>
+<p>In future releases we plan to support community built addons.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/migration_guide"><span class="arrow-prev">← </span><span>Migration Guide</span></a><a class="docs-next button" href="/docs/addons/webhook"><span>Webhook</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
