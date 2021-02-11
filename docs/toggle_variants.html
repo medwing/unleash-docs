@@ -69,13 +69,13 @@
 <p>Unleash will first use activation strategies to decide whether a feature toggle is considered enabled or disabled for the current user.</p>
 <p>If the toggle is considered <strong>enabled</strong>, the Unleash client will select the correct variant for the request. Unleash clients will use values from the Unleash context to make the allocation predictable. <code>UserId</code> is the preferred value, then <code>sessionId</code> and <code>remoteAdr</code>. If no context data is provided, the traffic will be spread randomly for each request.</p>
 <p>If the toggle is considered <strong>disabled</strong> you will get the built-in <code>disabled</code> variant.</p>
-<p>A json represntation of the empty variant will be the following:</p>
+<p>A json representation of the empty variant will be the following:</p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"disabled"</span>,
   <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">false</span>
 }
 </code></pre>
-<p>The actual representation of the built-in the client SDK will vary slighty, to honor best pratices in various languages.</p>
+<p>The actual representation of the built-in the client SDK will vary slightly, to honor best practices in various languages.</p>
 <blockquote>
 <p>If you change the number of variants, it will affect variant allocations. This means that some of the users will be moved to the next variant.</p>
 </blockquote>
