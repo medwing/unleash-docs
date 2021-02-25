@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Custom Activation Strategy · Unleash</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Even though Unleash comes with a few powerful [activation strategies](/docs/activation_strategy) there might be scenarios where you would like to extend Unleash with your own custom strategies."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Custom Activation Strategy · Unleash"/><meta property="og:type" content="website"/><meta property="og:url" content="https://unleash.github.io/"/><meta property="og:description" content="Even though Unleash comes with a few powerful [activation strategies](/docs/activation_strategy) there might be scenarios where you would like to extend Unleash with your own custom strategies."/><meta property="og:image" content="https://unleash.github.io/img/unleash_logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://unleash.github.io/img/unleash_logo.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129659197-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129659197-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-inverted.png" alt="Unleash"/><h2 class="headerTitleWithLogo">Unleash</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/user_guide/connect_sdk" target="_self">Documentation</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="/docs/deploy/getting_started" target="_self">Deploy and manage</a></li><li class=""><a href="/docs/integrations/integrations" target="_self">Integrations</a></li><li class=""><a href="/docs/developer_guide" target="_self">Contribute</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Advanced</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/user_guide/connect_sdk">Connect your SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/client_sdk">Client SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/create_feature_toggle">Create a feature toggle</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/control_rollout">Control rollout</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/projects">Projects</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/unleash_context">Unleash Context</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/native_apps">Working with native apps</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/single_page_apps">Working with single page apps</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Working with your SDK</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/sdks/java_sdk">Java SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/node_sdk">Node SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/dot_net_sdk">.net SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/go_sdk">GO SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/python_sdk">Python SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/ruby_sdk">Ruby SDK</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Addons framework</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/addons/">Addons Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/webhook">Webhook</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/jira-commenter">Jira commenter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/advanced/custom_activation_strategy">Custom Activation Strategy</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/feature_toggle_types">Feature Toggle Types</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/toggle_variants">Feature Toggle Variants</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/archived_toggles">Archived toggles</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/audit_log">The audit log</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/api_access">API Access</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/tags">Tagging Features</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Custom Activation Strategy</h1></header><article><div><span><p>Even though Unleash comes with a few powerful <a href="/docs/activation_strategy">activation strategies</a> there might be scenarios where you would like to extend Unleash with your own custom strategies.</p>
+<h3><a class="anchor" aria-hidden="true" id="example-timestamp-strategy"></a><a href="#example-timestamp-strategy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example: TimeStamp Strategy</h3>
+<p>In this example we want to define an activation strategy offers a scheduled release of a feature toggle. This means that we want the feature toggle to be activated after a given date and time.</p>
+<h4><a class="anchor" aria-hidden="true" id="define-custom-strategy"></a><a href="#define-custom-strategy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Define custom strategy</h4>
+<p>First we need to &quot;define&quot; our new strategy. To add a new &quot;Strategy&quot;, open the Strategies tab from the sidebar.</p>
+<p><img src="../assets/timestamp_create_strategy.png" alt="timestamp_create_strategy"></p>
+<p>We name our strategy <code>TimeStamp</code> and add one required parameter of type string, which we call <code>enableAfter</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="use-custom-strategy"></a><a href="#use-custom-strategy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use custom strategy</h4>
+<p>After we have created the strategy definition, we can now decide to use that activation strategy for our feature toggle.</p>
+<p><img src="../assets/timestamp_use_strategy.png" alt="timestamp_use_strategy"></p>
+<p>In the example we want to use our custom strategy for the feature toggle named <code>demo.TimeStampRollout</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="client-implementation"></a><a href="#client-implementation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client implementation</h4>
+<p>All official client SDK's for Unleash provides abstractions for you to implement support for custom strategies.</p>
+<blockquote>
+<p>Before you have provided support for the custom strategy; the client will return false, because it does not understand the activation strategy.</p>
+</blockquote>
+<p>In Node.js the implementation for the <code>TimeStampStrategy</code> would be:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimeStampStrategy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Strategy</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>(<span class="hljs-string">'TimeStamp'</span>);
+  }
+
+  isEnabled(parameters, context) {
+    <span class="hljs-built_in">Date</span>.parse(parameters.enableAfter) &lt; <span class="hljs-built_in">Date</span>.now();
+  }
+}
+</code></pre>
+<p>In the example implementation we make use of the library called moment to parse the timestamp and verify that current time is after the specified <code>enabledAfter</code> parameter.</p>
+<p>All parameter injected to the strategy are handled as <code>string</code> objects. This means that the strategies needs to parse it to a more suitable format. In this example we just parse it directly to a <code>Date</code> type and do the comparison directly. You might want to also consider timezone in a real implementation.</p>
+<p>We also have to remember to register the custom strategy when initializing the Unleash client. Full working code example:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> { Strategy, initialize, isEnabled } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'unleash-client'</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimeStampStrategy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Strategy</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>(<span class="hljs-string">'TimeStamp'</span>);
+  }
+
+  isEnabled(parameters, context) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Date</span>.parse(parameters.enableAfter) &lt; <span class="hljs-built_in">Date</span>.now();
+  }
+}
+
+<span class="hljs-keyword">const</span> instance = initialize({
+  <span class="hljs-attr">url</span>: <span class="hljs-string">'http://unleash.herokuapp.com/api/'</span>,
+  <span class="hljs-attr">appName</span>: <span class="hljs-string">'unleash-demo'</span>,
+  <span class="hljs-attr">instanceId</span>: <span class="hljs-string">'1'</span>,
+  <span class="hljs-attr">strategies</span>: [<span class="hljs-keyword">new</span> TimeStampStrategy()],
+});
+
+instance.on(<span class="hljs-string">'ready'</span>, () =&gt; {
+  setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(isEnabled(<span class="hljs-string">'demo.TimeStampRollout'</span>));
+  }, <span class="hljs-number">1000</span>);
+});
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/user_guide/strategy_constraints"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/advanced/feature_toggle_types"><span>Feature Toggle Types</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>

@@ -3,63 +3,7 @@
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
               gtag('config', 'UA-129659197-1');
-            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-inverted.png" alt="Unleash"/><h2 class="headerTitleWithLogo">Unleash</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting_started" target="_self">Documentation</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Documentation</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">User Documentation</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting_started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/configuring_unleash">Configuring Unleash</a></li><li class="navListItem"><a class="navItem" href="/docs/client_sdk">Client SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/feature_toggle_types">Feature Toggle Types</a></li><li class="navListItem"><a class="navItem" href="/docs/toggle_variants">Feature Toggle Variants</a></li><li class="navListItem"><a class="navItem" href="/docs/securing_unleash">Securing Unleash</a></li><li class="navListItem"><a class="navItem" href="/docs/unleash_context">Unleash Context</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/client_specification">Client Specification</a></li><li class="navListItem"><a class="navItem" href="/docs/migration_guide">Migration Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Addons</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/addons/">Addons Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/webhook">Webhook</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/jira-commenter">Jira commenter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Developer Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/developer_guide">Developer guide</a></li><li class="navListItem"><a class="navItem" href="/docs/database_schema">Database Schema</a></li><li class="navListItem"><a class="navItem" href="/docs/database_backup">Database Backup</a></li><li class="navListItem"><a class="navItem" href="/docs/import_export">Import &amp; Export</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/guides/google_auth">Google Auth Hook</a></li><li class="navListItem"><a class="navItem" href="/docs/guides/custom_activation_strategy">Custom Activation Strategy</a></li><li class="navListItem"><a class="navItem" href="/docs/guides/feature_updates_to_slack">Feature Updates To slack</a></li></ul></div></div></section></div><script>
-            var coll = document.getElementsByClassName('collapsible');
-            var checkActiveCategory = true;
-            for (var i = 0; i < coll.length; i++) {
-              var links = coll[i].nextElementSibling.getElementsByTagName('*');
-              if (checkActiveCategory){
-                for (var j = 0; j < links.length; j++) {
-                  if (links[j].classList.contains('navListItemActive')){
-                    coll[i].nextElementSibling.classList.toggle('hide');
-                    coll[i].childNodes[1].classList.toggle('rotate');
-                    checkActiveCategory = false;
-                    break;
-                  }
-                }
-              }
-
-              coll[i].addEventListener('click', function() {
-                var arrow = this.childNodes[1];
-                arrow.classList.toggle('rotate');
-                var content = this.nextElementSibling;
-                content.classList.toggle('hide');
-              });
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
-              createToggler('#tocToggler', 'body', 'tocActive');
-
-              var headings = document.querySelector('.toc-headings');
-              headings && headings.addEventListener('click', function(event) {
-                var el = event.target;
-                while(el !== headings){
-                  if (el.tagName === 'A') {
-                    document.body.classList.remove('tocActive');
-                    break;
-                  } else{
-                    el = el.parentNode;
-                  }
-                }
-              }, false);
-
-              function createToggler(togglerSelector, targetSelector, className) {
-                var toggler = document.querySelector(togglerSelector);
-                var target = document.querySelector(targetSelector);
-
-                if (!toggler) {
-                  return;
-                }
-
-                toggler.onclick = function(event) {
-                  event.preventDefault();
-
-                  target.classList.toggle(className);
-                };
-              }
-            });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Activation Strategies</h1></header><article><div><span><p>It is powerful to be able to turn a feature on and off instantaneously, without redeploying the application. The next level of control comes when you are able to enable a feature for specific users or enable it for a small subset of users. We achieve this level of control with the help of activation strategies. The most straightforward strategy is the “default” strategy, which basically means that the feature should be enabled to everyone.</p>
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-inverted.png" alt="Unleash"/><h2 class="headerTitleWithLogo">Unleash</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/user_guide/connect_sdk" target="_self">Documentation</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="/docs/deploy/getting_started" target="_self">Deploy and manage</a></li><li class=""><a href="/docs/integrations/integrations" target="_self">Integrations</a></li><li class=""><a href="/docs/developer_guide" target="_self">Contribute</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Activation Strategies</h1></header><article><div><span><p>It is powerful to be able to turn a feature on and off instantaneously, without redeploying the application. The next level of control comes when you are able to enable a feature for specific users or enable it for a small subset of users. We achieve this level of control with the help of activation strategies. The most straightforward strategy is the “default” strategy, which basically means that the feature should be enabled to everyone.</p>
 <p>The definition of an activation strategy lives in the Unleash API and can be created via the Unleash UI. The implementation of activation strategies lives in various client implementations.</p>
 <p>Unleash comes with a few common activation strategies. Some of them require the client to provide the <a href="/docs/unleash_context">unleash-context</a>, which gives the necessary context for Unleash.</p>
 <h2><a class="anchor" aria-hidden="true" id="default"></a><a href="#default" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>default</h2>
@@ -123,4 +67,4 @@
 <ul>
 <li>hostNames - <em>List of hostnames to enable the feature toggle for.</em></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/unleash_context"><span class="arrow-prev">← </span><span>Unleash Context</span></a><a class="docs-next button" href="/docs/client_specification"><span>Client Specification</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">default</a></li><li><a href="#userwithid">userWithId</a></li><li><a href="#flexiblerollout">flexibleRollout</a><ul class="toc-headings"><li><a href="#customize-stickiness-beta">Customize stickiness (beta)</a></li></ul></li><li><a href="#gradualrolloutuserid">gradualRolloutUserId</a></li><li><a href="#gradualrolloutsessionid">gradualRolloutSessionId</a></li><li><a href="#gradualrolloutrandom">gradualRolloutRandom</a></li><li><a href="#remoteaddress">remoteAddress</a></li><li><a href="#applicationhostname">applicationHostname</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">default</a></li><li><a href="#userwithid">userWithId</a></li><li><a href="#flexiblerollout">flexibleRollout</a><ul class="toc-headings"><li><a href="#customize-stickiness-beta">Customize stickiness (beta)</a></li></ul></li><li><a href="#gradualrolloutuserid">gradualRolloutUserId</a></li><li><a href="#gradualrolloutsessionid">gradualRolloutSessionId</a></li><li><a href="#gradualrolloutrandom">gradualRolloutRandom</a></li><li><a href="#remoteaddress">remoteAddress</a></li><li><a href="#applicationhostname">applicationHostname</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>

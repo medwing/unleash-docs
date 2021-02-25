@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Python SDK · Unleash</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="```java"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Python SDK · Unleash"/><meta property="og:type" content="website"/><meta property="og:url" content="https://unleash.github.io/"/><meta property="og:description" content="```java"/><meta property="og:image" content="https://unleash.github.io/img/unleash_logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://unleash.github.io/img/unleash_logo.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129659197-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129659197-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-inverted.png" alt="Unleash"/><h2 class="headerTitleWithLogo">Unleash</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/user_guide/connect_sdk" target="_self">Documentation</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="/docs/deploy/getting_started" target="_self">Deploy and manage</a></li><li class=""><a href="/docs/integrations/integrations" target="_self">Integrations</a></li><li class=""><a href="/docs/developer_guide" target="_self">Contribute</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Working with your SDK</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/user_guide/connect_sdk">Connect your SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/client_sdk">Client SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/create_feature_toggle">Create a feature toggle</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/control_rollout">Control rollout</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/projects">Projects</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/unleash_context">Unleash Context</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/native_apps">Working with native apps</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/single_page_apps">Working with single page apps</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Working with your SDK</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/sdks/java_sdk">Java SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/node_sdk">Node SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/dot_net_sdk">.net SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/go_sdk">GO SDK</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/sdks/python_sdk">Python SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/ruby_sdk">Ruby SDK</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Addons framework</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/addons/">Addons Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/webhook">Webhook</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/jira-commenter">Jira commenter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/advanced/custom_activation_strategy">Custom Activation Strategy</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/feature_toggle_types">Feature Toggle Types</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/toggle_variants">Feature Toggle Variants</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/archived_toggles">Archived toggles</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/audit_log">The audit log</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/api_access">API Access</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/tags">Tagging Features</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Python SDK</h1></header><article><div><span><pre><code class="hljs css language-java">from UnleashClient <span class="hljs-keyword">import</span> UnleashClient
+  
+    client = UnleashClient(
+        url=<span class="hljs-string">"&lt;API url&gt;"</span>,
+        app_name=<span class="hljs-string">"my-python-app"</span>,
+        custom_headers={<span class="hljs-string">'Authorization'</span>: <span class="hljs-string">'&lt;Client secret&gt;'</span>})
+    
+    client.initialize_client()
+  
+    client.is_enabled(<span class="hljs-string">"unleash.beta.variants"</span>)
+</code></pre>
+<p>Read more at <a href="https://github.com/Unleash/unleash-client-python">github.com/Unleash/unleash-client-python</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/sdks/go_sdk"><span class="arrow-prev">← </span><span>GO SDK</span></a><a class="docs-next button" href="/docs/sdks/ruby_sdk"><span>Ruby SDK</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
