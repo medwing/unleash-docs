@@ -116,7 +116,7 @@ unleash
 <li>Create a network by running <code>docker network create unleash</code></li>
 <li>Run</li>
 </ol>
-<pre><code class="hljs css language-sh">docker run -e POSTGRES_PASSWORD={INSERT_PASSWORD} -e POSTGRES_USER={INSERT_USER} -e POSTGRES_DB=unleash --network unleash postgres
+<pre><code class="hljs css language-sh">docker run -e POSTGRES_PASSWORD={INSERT_PASSWORD} -e POSTGRES_USER={INSERT_USER} -e POSTGRES_DB=unleash --network unleash --name postgres postgres
 
 docker run -p 4242:4242 --network unleash -e DATABASE_URL=postgres://{INSERT_USER}:{INSERT_PASSWORD}@postgres:5432/unleash unleashorg/unleash-server
 </code></pre>
