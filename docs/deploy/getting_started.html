@@ -74,10 +74,35 @@
 <p>Once the server has started, you will see the message:</p>
 <pre><code class="hljs css language-sh">Unleash started on http://localhost:4242
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="option-one---from-a-terminalbash-shell"></a><a href="#option-one---from-a-terminalbash-shell" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option one - from a terminal/bash shell</h3>
-<pre><code class="hljs css language-sh">npm install unleash-server -g
-unleash -d postgres://unleash_user:password@localhost:5432/unleash -p 4242
+<h3><a class="anchor" aria-hidden="true" id="option-one---use-docker"></a><a href="#option-one---use-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option one - use Docker</h3>
+<p><strong>Useful links:</strong></p>
+<ul>
+<li><a href="https://hub.docker.com/r/unleashorg/unleash-server/">Docker image on dockerhub</a></li>
+<li><a href="https://artifacthub.io/packages/helm/unleash/unleash">Unleash Helm Chart on artifacthub</a></li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Create a network by running <code>docker network create unleash</code></li>
+<li>Start a postgres database:</li>
+</ol>
+<pre><code class="hljs css language-sh">docker run -e POSTGRES_PASSWORD=some_password \
+  -e POSTGRES_USER=unleash_user -e POSTGRES_DB=unleash \
+  --network unleash --name postgres postgres
 </code></pre>
+<ol start="3">
+<li>Start Unleash via docker:</li>
+</ol>
+<pre><code class="hljs css language-sh">docker run -p 4242:4242 \
+  -e DATABASE_HOST=postgres -e DATABASE_NAME=unleash \
+  -e DATABASE_USERNAME=unleash_user -e DATABASE_PASSWORD=some_password \
+  --network unleash unleashorg/unleash-server
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="docker-compose"></a><a href="#docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker-compose</h4>
+<ol>
+<li>Clone the <a href="https://github.com/Unleash/unleash-docker">unleash-docker</a> repository.</li>
+<li>Run <code>docker-compose build</code> in repository root folder.</li>
+<li>Run <code>docker-compose up</code> in repository root folder.</li>
+</ol>
 <h3><a class="anchor" aria-hidden="true" id="option-two---from-nodejs"></a><a href="#option-two---from-nodejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option two - from Node.js</h3>
 <ol>
 <li><p>Create a new folder/directory on your development computer.</p></li>
@@ -103,22 +128,10 @@ unleash
 <pre><code class="hljs css language-sh">node server.js
 </code></pre></li>
 </ol>
-<h3><a class="anchor" aria-hidden="true" id="option-three---use-docker"></a><a href="#option-three---use-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option three - use Docker</h3>
-<p><a href="https://hub.docker.com/r/unleashorg/unleash-server/">View the image on dockerhub</a></p>
-<h4><a class="anchor" aria-hidden="true" id="docker-compose"></a><a href="#docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker-compose</h4>
-<ol>
-<li>Clone the <a href="https://github.com/Unleash/unleash-docker">unleash-docker</a> repository.</li>
-<li>Run <code>docker-compose build</code> in repository root folder.</li>
-<li>Run <code>docker-compose up</code> in repository root folder.</li>
-</ol>
-<h4><a class="anchor" aria-hidden="true" id="manually"></a><a href="#manually" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manually</h4>
-<ol>
-<li>Create a network by running <code>docker network create unleash</code></li>
-<li>Run</li>
-</ol>
-<pre><code class="hljs css language-sh">docker run -e POSTGRES_PASSWORD={INSERT_PASSWORD} -e POSTGRES_USER={INSERT_USER} -e POSTGRES_DB=unleash --network unleash --name postgres postgres
-
-docker run -p 4242:4242 --network unleash -e DATABASE_URL=postgres://{INSERT_USER}:{INSERT_PASSWORD}@postgres:5432/unleash unleashorg/unleash-server
+<h3><a class="anchor" aria-hidden="true" id="option-three---from-a-terminalbash-shell"></a><a href="#option-three---from-a-terminalbash-shell" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option three - from a terminal/bash shell</h3>
+<p><em>(deprecated)</em></p>
+<pre><code class="hljs css language-sh">npm install unleash-server -g
+unleash -d postgres://unleash_user:password@localhost:5432/unleash -p 4242
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="test-your-server-and-create-a-sample-api-call"></a><a href="#test-your-server-and-create-a-sample-api-call" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test your server and create a sample API call</h2>
 <p>Once the Unleash server has started, go to <a href="http://localhost:4242">localhost:4242</a> in your browser. If you see a list of example feature toggles, try modifying one of them with <a href="https://curl.se/">curl</a> from a terminal/bash shell:</p>
@@ -148,4 +161,4 @@ docker run -p 4242:4242 --network unleash -e DATABASE_URL=postgres://{INSERT_USE
 <li><code>export CHECK_VERSION=false</code></li>
 </ul></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/deploy/configuring_unleash"><span>Configuring Unleash</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirements">Requirements</a></li><li><a href="#start-unleash-server">Start Unleash server</a><ul class="toc-headings"><li><a href="#option-one---from-a-terminalbash-shell">Option one - from a terminal/bash shell</a></li><li><a href="#option-two---from-nodejs">Option two - from Node.js</a></li><li><a href="#option-three---use-docker">Option three - use Docker</a></li></ul></li><li><a href="#test-your-server-and-create-a-sample-api-call">Test your server and create a sample API call</a></li><li><a href="#version-check">Version check</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/deploy/configuring_unleash"><span>Configuring Unleash</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirements">Requirements</a></li><li><a href="#start-unleash-server">Start Unleash server</a><ul class="toc-headings"><li><a href="#option-one---use-docker">Option one - use Docker</a></li><li><a href="#option-two---from-nodejs">Option two - from Node.js</a></li><li><a href="#option-three---from-a-terminalbash-shell">Option three - from a terminal/bash shell</a></li></ul></li><li><a href="#test-your-server-and-create-a-sample-api-call">Test your server and create a sample API call</a></li><li><a href="#version-check">Version check</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo-inverted.png" alt="Unleash" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting_started.html">Getting Started</a><a href="/docs/securing_unleash.html">Securing Unleash</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.unleash-hosted.com/">Unleash-hosted.com</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>

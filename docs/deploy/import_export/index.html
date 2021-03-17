@@ -100,6 +100,11 @@ You can customize the export with query parameters:</p>
 <p>For example if you want to download just feature-toggles as yaml:</p>
 <pre><code class="hljs"><span class="hljs-meta-keyword">/api/</span>admin<span class="hljs-meta-keyword">/state/</span>export?format=yaml<span class="hljs-variable">&amp;</span>featureToggles=<span class="hljs-number">1</span><span class="hljs-variable">&amp;strategies</span>=<span class="hljs-number">0</span><span class="hljs-variable">&amp;tags</span>=<span class="hljs-number">0</span><span class="hljs-variable">&amp;projects</span>=<span class="hljs-number">0</span><span class="hljs-variable">&amp;download</span>=<span class="hljs-number">1</span>
 </code></pre>
+<p>Example with curl:</p>
+<pre><code class="hljs css language-sh">curl -X GET -H <span class="hljs-string">"Content-Type: application/json"</span> \
+  -H <span class="hljs-string">"Authorization: Basic YWRtaW46"</span> \
+  http://unleash.herokuapp.com/api/admin/state/<span class="hljs-built_in">export</span>?&amp;featureToggles=1&amp;strategies=0 &gt; export.json
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="api-import"></a><a href="#api-import" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Import</h3>
 <p>You can import feature-toggles and strategies by POSTing to the <code>/api/admin/state/import</code> endpoint (keep in mind this will require authentication).<br>
 You can either send the data as JSON in the POST-body or send a <code>file</code> parameter with <code>multipart/form-data</code> (YAML files are also accepted here).</p>
@@ -119,6 +124,12 @@ You can either send the data as JSON in the POST-body or send a <code>file</code
     ]
 }
 </code></pre>
+<p>Example with curl:</p>
+<pre><code class="hljs css language-sh">curl -X POST -H <span class="hljs-string">"Content-Type: application/json"</span> \
+  -H <span class="hljs-string">"Authorization: Basic YWRtaW46"</span> -d @export.json \
+  http://localhost:4242/api/admin/state/import
+</code></pre>
+<p>*) Remember to set correct token for Authorization.</p>
 <h2><a class="anchor" aria-hidden="true" id="startup-import"></a><a href="#startup-import" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Startup import</h2>
 <h3><a class="anchor" aria-hidden="true" id="import-files-via-config-parameter"></a><a href="#import-files-via-config-parameter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Import files via config parameter</h3>
 <p>You can import a json or yaml file via the configuration option <code>importFile</code>.</p>
