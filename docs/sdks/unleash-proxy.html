@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>The Unleash Proxy · </title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="A lot of our users wanted to use feature toggles in their single-page and native applications. To solve this in a performant and privacy concerned way we built The Unleash Proxy"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="The Unleash Proxy · "/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.getunleash.io/"/><meta property="og:description" content="A lot of our users wanted to use feature toggles in their single-page and native applications. To solve this in a performant and privacy concerned way we built The Unleash Proxy"/><meta property="og:image" content="https://docs.getunleash.io/img/unleash_logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.getunleash.io/img/unleash_logo.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-134882379-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-134882379-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Logo_White_Transparent_Horizontal.png" alt=""/><h2 class="headerTitleWithLogo"></h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/user_guide/" target="_self">Documentation</a></li><li class=""><a href="/docs/deploy/getting_started" target="_self">Deploy and manage</a></li><li class=""><a href="/docs/integrations/integrations" target="_self">Integrations</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="https://www.unleash-hosted.com/pricing" target="_self">Enterprise</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Unleash SDKs</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/user_guide/">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/v4-whats-new">What&#x27;s new in v4?</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/create_feature_toggle">Create a feature toggle</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/control_rollout">Control rollout</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/projects">Projects</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/unleash_context">Unleash Context</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/user-management">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/rbac">Role-based Access control</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/api-token">API Tokens</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/technical_debt">Technical Debt</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Unleash SDKs</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/sdks/">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/java_sdk">Java SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/node_sdk">Node SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/dot_net_sdk">.net SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/go_sdk">GO SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/python_sdk">Python SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/ruby_sdk">Ruby SDK</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/sdks/unleash-proxy">The Unleash Proxy</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/proxy-javascript">JavaScript Proxy SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/community">Community SDKs...</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Addons framework</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/addons/">Addons Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/webhook">Webhook</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/teams">Microsoft Teams</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/datadog">Datadog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/advanced/strategy_constraints">Strategy Constraints</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/custom_activation_strategy">Custom Activation Strategy</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/feature_toggle_types">Feature Toggle Types</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/toggle_variants">Feature Toggle Variants</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/archived_toggles">Archived toggles</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/audit_log">The audit log</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/api_access">API Access</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/tags">Tagging Features</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">The Unleash Proxy</h1></header><article><div><span><p>A lot of our users wanted to use feature toggles in their single-page and native applications. To solve this in a performant and privacy concerned way we built The Unleash Proxy</p>
+<p>The Unleash Proxy sits between the Unleash API and the application. It provides a simple and super-fast API, as it has all the data it needs available in memory.</p>
+<p>The proxy solves three important aspects:</p>
+<ul>
+<li><strong>Performance</strong> – The proxy will cache all toggles in memory, and will be running on the edge, close to your end-users. A single instance will be able to handle thousands of request/sec, and you can scale it easily by adding additional instances.</li>
+<li><strong>Security</strong> – The proxy evaluates the feature flags for the user on the server-side, and only exposes the results of enabled feature flags for a specific user.</li>
+<li><strong>Privacy</strong> – If you run the proxy yourself (we can host it as well though) we will not see your end users. This means that you still have full control of your end-users, the way it should be!</li>
+</ul>
+<p><img src="../assets/The-unleash-proxy.png" alt="The Unleash Proxy"></p>
+<p><em>The Unleash-Proxy uses the Unleash SDK and exposes a simple API</em>. The Proxy will synchronize with the Unleash API in the background and provide a simple HTTP API for clients.</p>
+<h3><a class="anchor" aria-hidden="true" id="unleash-proxy-api"></a><a href="#unleash-proxy-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unleash Proxy API</h3>
+<p>The Unleash-Proxy has a very simple API. It takes the <a href="../user_guide/unleash_context">Unleash Context</a> as input and will return the feature toggles relevant for that specific context.</p>
+<p><img src="../assets/The-Unleash-Proxy-API.png" alt="The Unleash Proxy">.</p>
+<h3><a class="anchor" aria-hidden="true" id="we-care-about-privacy"></a><a href="#we-care-about-privacy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>We care about Privacy!</h3>
+<p>The Unleash Proxy is important because you should not expose your entire toggle configurations to your end users! Single page apps works in context of a specific user. The proxy will only return the evaluated toggles (with variants) that should be enabled for those specific users in that specific context.</p>
+<p>Most of our customers prefer to run The Unleash Proxy themselves. PS! We actually prefer this as we don’t want to see your users. Running it is pretty simple, it is either a small Node.js process you start or a docker image you use. (We can of course host the proxy for you also.)</p>
+<h3><a class="anchor" aria-hidden="true" id="how-to-connect-to-the-proxy"></a><a href="#how-to-connect-to-the-proxy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to connect to the Proxy?</h3>
+<p>The Unleash Proxy takes the heavy lifting of evaluating toggles and only returns enabled toggles and their values to the client. This means that you would get away with a simple http-client in many common use-cases.</p>
+<p>However in some settings you would like a bit more logic around it to make it as fast as possible, and keep up to date with changes.</p>
+<ul>
+<li><a href="./proxy-javascript">JavaScript Proxy SDK</a></li>
+<li>Android Proxy SDK (coming soon)</li>
+<li>iOS Proxy SDK (coming soon)</li>
+</ul>
+<p>The proxy is also ideal fit for serverless functions such as AWS Lambda. In that scenario the proxy can run on a small container near the serverless function, preferably in the same VPC, giving the lambda extremely fast access to feature flags, at a predictable cost.</p>
+<p>The unleash-proxy is compatible with unleash-enterprise and is offered as a free add-on to all our customers. We can also host it for you, for a small fee covering our cost.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/sdks/ruby_sdk"><span class="arrow-prev">← </span><span>Ruby SDK</span></a><a class="docs-next button" href="/docs/sdks/proxy-javascript"><span class="function-name-prevnext">JavaScript Proxy SDK</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/Logo_White_Transparent_Horizontal.png" alt="" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/user_guide/index.html">Getting Started</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.getunleash.io">getunleash.io</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
