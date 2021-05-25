@@ -80,7 +80,6 @@
   <span class="hljs-attr">"features"</span>: [
     {
       <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Feature.A"</span>,
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"lorem ipsum"</span>,
       <span class="hljs-attr">"type"</span>: <span class="hljs-string">"release"</span>,
       <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">false</span>,
       <span class="hljs-attr">"stale"</span>: <span class="hljs-literal">false</span>,
@@ -96,7 +95,6 @@
     {
       <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Feature.B"</span>,
       <span class="hljs-attr">"type"</span>: <span class="hljs-string">"killswitch"</span>,
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"lorem ipsum"</span>,
       <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
       <span class="hljs-attr">"stale"</span>: <span class="hljs-literal">false</span>,
       <span class="hljs-attr">"strategies"</span>: [
@@ -142,7 +140,6 @@
 </blockquote>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Feature.A"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"lorem ipsum.."</span>,
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"release"</span>,
   <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"stale"</span>: <span class="hljs-literal">false</span>,
@@ -165,8 +162,6 @@
 <p>The example shows strategy constraints in action. Constraints is a new field on the strategy-object. It is a list of constraints that need to be satisfied.</p>
 <p>In the example <code>environment</code> needs to be <code>production</code> AND <code>userId</code> must be either <code>123</code> OR <code>44</code> in order for the Unleash Client to evaluate the strategy, which in this scenario is “default” and will always evaluate to true.</p>
 <pre><code class="hljs css language-json">{
-  <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2019-08-02T19:25:13.976Z"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Play with strategy constraints"</span>,
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"release"</span>,
   <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"stale"</span>: <span class="hljs-literal">false</span>,
@@ -207,7 +202,6 @@
   <span class="hljs-attr">"features"</span>: [
     {
       <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Demo"</span>,
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Show off fedfdfature toggles!"</span>,
       <span class="hljs-attr">"type"</span>: <span class="hljs-string">"operational"</span>,
       <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
       <span class="hljs-attr">"stale"</span>: <span class="hljs-literal">false</span>,
@@ -238,8 +232,7 @@
           <span class="hljs-attr">"overrides"</span>: [],
           <span class="hljs-attr">"weightType"</span>: <span class="hljs-string">"variable"</span>
         }
-      ],
-      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2020-09-01T07:14:39.438Z"</span>
+      ]
     }
   ]
 }
