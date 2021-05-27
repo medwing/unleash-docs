@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Authentication (Single-Sign-On) · </title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&gt; This guide only applies to customers on the Enterprise subscription. Check out the [Unleash subscription plans](https://www.getunleash.io/plans) for details."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Authentication (Single-Sign-On) · "/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.getunleash.io/"/><meta property="og:description" content="&gt; This guide only applies to customers on the Enterprise subscription. Check out the [Unleash subscription plans](https://www.getunleash.io/plans) for details."/><meta property="og:image" content="https://docs.getunleash.io/img/unleash_logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.getunleash.io/img/unleash_logo.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-134882379-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-134882379-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Logo_White_Transparent_Horizontal.png" alt=""/><h2 class="headerTitleWithLogo"></h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/user_guide/" target="_self">Documentation</a></li><li class=""><a href="/docs/deploy/getting_started" target="_self">Deploy and manage</a></li><li class=""><a href="/docs/integrations/integrations" target="_self">Integrations</a></li><li class=""><a href="/docs/api/client/features" target="_self">API</a></li><li class=""><a href="https://www.unleash-hosted.com/pricing" target="_self">Enterprise</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Advanced</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/user_guide/">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/v4-whats-new">What&#x27;s new in v4?</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/create_feature_toggle">Create a feature toggle</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/activation_strategy">Activation Strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/control_rollout">Control rollout</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/projects">Projects</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/unleash_context">Unleash Context</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/user-management">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/rbac">Role-based Access control</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/api-token">API Tokens</a></li><li class="navListItem"><a class="navItem" href="/docs/user_guide/technical_debt">Technical Debt</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Unleash SDKs</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/sdks/">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/java_sdk">Java SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/node_sdk">Node SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/dot_net_sdk">.net SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/go_sdk">GO SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/python_sdk">Python SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/ruby_sdk">Ruby SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/unleash-proxy">The Unleash Proxy</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/proxy-javascript">JavaScript Proxy SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/sdks/community">Community SDKs...</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Addons framework</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/addons/">Addons Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/webhook">Webhook</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/teams">Microsoft Teams</a></li><li class="navListItem"><a class="navItem" href="/docs/addons/datadog">Datadog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Advanced</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/advanced/strategy_constraints">Strategy Constraints</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/custom_activation_strategy">Custom Activation Strategy</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/feature_toggle_types">Feature Toggle Types</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/toggle_variants">Feature Toggle Variants</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/archived_toggles">Archived toggles</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/audit_log">The audit log</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/api_access">API Access</a></li><li class="navListItem"><a class="navItem" href="/docs/advanced/tags">Tagging Features</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/advanced/enterprise-authentication">Authentication (Single-Sign-On)</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Authentication (Single-Sign-On)</h1></header><article><div><span><blockquote>
+<p>This guide only applies to customers on the Enterprise subscription. Check out the <a href="https://www.getunleash.io/plans">Unleash subscription plans</a> for details.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<p>In this guide we will do a deep dive on the Single-Sign-On (SSO) integrations. Unleash Enterprise supports SAML 2.0, OpenID Connect and Google Authentication. In addition, Unleash Enterprise also supports username/password authentication out of the box, as you get with all the other versions of Unleash.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-1-sign-in"></a><a href="#step-1-sign-in" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1: Sign-in</h2>
+<p>In order to configure SSO Authentication you will need to log in to the Unleash instance with a user that have &quot;Admin&quot; role. If you are self-hosting Unleash then a default user will be automatically created the first time you start unleash:</p>
+<ul>
+<li>username: <code>admin</code></li>
+<li>password: <code>unleash4all</code> (or <code>admin</code> if you started with Unleash v3).</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="step-2-configure-authentication-provider"></a><a href="#step-2-configure-authentication-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2: Configure Authentication provider</h2>
+<p>Unleash enterprise supports multiple authentication providers, and we provide in depth guides for each of them. To find them navigate to &quot;Admin&quot; =&gt; &quot;Authentication&quot; section.</p>
+<p><img src="../assets/admin-authentication.png" alt="admin-authentication"></p>
+<h2><a class="anchor" aria-hidden="true" id="step-3a-saml-20"></a><a href="#step-3a-saml-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3a: SAML 2.0</h2>
+<h3><a class="anchor" aria-hidden="true" id="okta-with-saml-20"></a><a href="#okta-with-saml-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Okta with SAML 2.0</h3>
+<p>If you are using Okta as your Authentication provider you start by signing in to your Okta account.</p>
+<p><strong>Step 1: Create new Okta application</strong></p>
+<p>Navigate to “Admin/Applications” and click the “Add Apps” button.</p>
+<p><img src="../assets/okta_add_application-768x345.png" alt="Okta: Add Apps"></p>
+<p>Then click “Create Application” and choose a new “SAML 2.0” application and click create</p>
+<p><img src="../assets/okta_create_new_application-768x467.png" alt="Okta: Create Application"></p>
+<p><strong>Step 2: Configure SAML</strong></p>
+<p>Unleash expect email to be sent from the SSO provider so make sure Name ID format is set to email. Also you must give the IDP Initiated SSO URL Name, we have chosen to call it “unleash-enterprise”. This gives us the Sign-on URL we will need in our Unleash configuration later.</p>
+<p><img src="../assets/okta_configure_saml2.0-768x832.png" alt="Okta: Configure SAML"></p>
+<blockquote>
+<h3><a class="anchor" aria-hidden="true" id="important"></a><a href="#important" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Important!</h3>
+<p>Please make sure to replace URLs with the correct URL for your dedicated Unleash instance. This will require correct region prefix and the instance name. The example above uses region=&quot;us&quot; and instance-name=&quot;ushosted&quot;.</p>
+<p>The correct format is: https://<strong>[region]</strong>.app.unleash-hosted.com/<strong>[instanceName]</strong>/auth/saml/callback</p>
+</blockquote>
+<p><strong>Step 3: Get Setup Instructions</strong></p>
+<p>Click the “view Setup Instructions” to get the necessary configuration required for Unleash.</p>
+<p><img src="../assets/okta_setup-instructions-768x731.png" alt="Okta: Setup Instructions"></p>
+<p><strong>Step 4: Configure SAML 2.0 Authentication provider in Unleash</strong></p>
+<p>Open Unleash Admin Dashboard and navigate to Admin -&gt; Authentication -&gt; SAML. Fill in the values captured in the “Get Setup Instructions” step.</p>
+<p>You may also choose to “auto create users”. This will make Unleash automatically create new users on the fly first time they sign-in to Unleash with the given SSO provider. You may also limit the auto-creation to certain email domains, shown in the example below.</p>
+<p><img src="../assets/saml-2.0-unleash.png" alt="Unleash: SAML 2.0"></p>
+<p><strong>Success!</strong></p>
+<p>That should be it. Please note that you also must assign users to the application defined in Okta to actually be able to log-in to Unleash.</p>
+<h3><a class="anchor" aria-hidden="true" id="keycloak-with-saml-20"></a><a href="#keycloak-with-saml-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keycloak with SAML 2.0</h3>
+<p><strong>Step 1: Add client in Keycloak</strong></p>
+<p>Open to the Keycloak dashboard and navigate to “Clients” and click “Add Client” button. Give it a unique clientId (e.g. unleash), use the “saml” protocol and specify the following SAML Endpoint:</p>
+<pre><code class="hljs">http<span class="hljs-variable">s:</span>//&lt;unleash.<span class="hljs-built_in">hostname</span>.<span class="hljs-keyword">com</span>&gt;/auth/saml/callback
+</code></pre>
+<p><img src="../assets/keykloak_step1-768x347.png" alt="Keycloak: Add client"></p>
+<p><strong>Step 2: Change “Name ID format to “email”</strong> Unleash expect email to be sent from the SSO provider so make sure Name ID format is set to email, see a). also you must give the IDP Initiated SSO URL Name, we have chosen to call it “unleash”, see 2). This gives us the Sign-on URL we will need in our Unleash configuration later.</p>
+<p><img src="../assets/keykloak_step2b-768x242.png" alt="Keycloak: step 2"></p>
+<p><strong>Step 3: Copy the Keycloak Entity ID an Signing key</strong></p>
+<p>Navigate to “Realm Settings” and open the “SAML 2.0 Identity Provider Metadata”. You will need copy the entityID (a) and the X509Certificate (B). These will be required when configuring SAML 2.0 in Unleash.</p>
+<p><img src="../assets/keykloak_step3-768x235.png" alt="Keycloak: step 3"></p>
+<p><strong>Step 4: Configure SAML 2.0 Authentication provider in Unleash</strong></p>
+<p>Open Unleash Admin Dashboard and navigate to Admin -&gt; Authentication. Fill in the values captured in the previous steps.</p>
+<ul>
+<li>Entity ID (3a)</li>
+<li>Single Sing-On URL (2b)</li>
+<li>Certificate (3b)</li>
+</ul>
+<p>You may also choose to “auto create users”. This will make Unleash automatically create new users on the fly first time they sign-in to Unleash with the given SSO provider. You may also limit the auto-creation to certain email domains, shown in the example below.</p>
+<p><img src="../assets/keykloak_step4-768x644.png" alt="Keycloak: step 4"></p>
+<h2><a class="anchor" aria-hidden="true" id="step-3b-openid-connect"></a><a href="#step-3b-openid-connect" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3b: OpenID Connect</h2>
+<h3><a class="anchor" aria-hidden="true" id="okta-with-openid-connect"></a><a href="#okta-with-openid-connect" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Okta with OpenID Connect</h3>
+<p>If you are using Okta as your Authentication provider you start by signing in to your Okta account.</p>
+<p><strong>Step 1: Create new Okta application</strong></p>
+<p>Navigate to “Admin/Applications” and click the “Add Apps” button.</p>
+<p><img src="../assets/okta_add_application-768x345.png" alt="Okta: Add Apps"></p>
+<p>Then click “Create Application” and choose a new “OIDC - OpenID Connect” application, and choose application type &quot;Web Application&quot; and click create.</p>
+<p><img src="../assets/okta-oidc-create.png" alt="Okta: Create Apps"></p>
+<p><strong>Step 2: Configure Application Integration</strong></p>
+<p>Give you application a name. And set the Sign-in redirect URI to:</p>
+<p><code>https://[unleash.hostname.some]/auth/oidc/callback</code></p>
+<p><img src="../assets/okta-oidc-configure.png" alt="Okta: Configure OpenID Connect"></p>
+<p>Save your new application and your will ge the required details you need to configure the Unleash side of things:</p>
+<p><img src="../assets/okta-oidc-details.png" alt="Okta: Configure OpenID Connect"></p>
+<p><strong>Step 3: Configure OpenID Connect provider in Unleash</strong></p>
+<p>Navigate to Unleash and insert the details (Discover URL, Client Id and Client Secret) in to Unleash.</p>
+<p><img src="../assets/oidc-unleash.png" alt="Unleash: Configure OpenID Connect"></p>
+<h2><a class="anchor" aria-hidden="true" id="step-3c-google-authentication"></a><a href="#step-3c-google-authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3c: Google Authentication</h2>
+<p><strong>Step 1: Setup Google OAuth 2.0 Credentials</strong> Go to <a href="https://console.developers.google.com/apis/credentials">https://console.developers.google.com/apis/credentials</a></p>
+<ol>
+<li>Click “Create credentials“</li>
+<li>Choose “Oauth Client Id”</li>
+<li>Choose Application Type: web application</li>
+<li>Add https://[<a href="http://unleash.hostname.com">unleash.hostname.com</a>]/auth/google/callback as an authorized redirect URI.</li>
+</ol>
+<p>You will then get a Client ID and a Client Secret that you will need in the next step.</p>
+<p><img src="../assets/sso-google-secret.png" alt="Google OAuth: Secret"></p>
+<p><strong>Step 2: Configure Unleash</strong></p>
+<p>Login to Unleash (admin/admin) and navigate to Admin -&gt; Authentication -&gt; Google.</p>
+<p>First insert the Client Id and Client Secret from step 1.</p>
+<p>You must also specify the hostname Unleash is running on. If Unleash is running on localhost you should specify the port as well (localhost:4242).</p>
+<p>If you want to allow everyone to access Unleash, and have Unleash auto-create users you can enable this option. You should then also specify which email domains you want to allow logging in to Unleash.</p>
+<p>Remember to click “Save” to store your settings.</p>
+<p><img src="../assets/google_auth_settings.png" alt="Google OAuth: Secret"></p>
+<h2><a class="anchor" aria-hidden="true" id="step-4-verify"></a><a href="#step-4-verify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4: Verify</h2>
+<p>Logout of Unleash and sign back in again. You should now be presented with the “SSO Authentication Option”. Click the button and follow the sign-in flow. If all goes well you should be successfully signed in to Unleash. If something is not working you can still sign-in with username and password.</p>
+<p><img src="../assets/sign-in.png" alt="Verify SSO"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/advanced/tags"><span class="arrow-prev">← </span><span>Tagging Features</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#step-1-sign-in">Step 1: Sign-in</a></li><li><a href="#step-2-configure-authentication-provider">Step 2: Configure Authentication provider</a></li><li><a href="#step-3a-saml-20">Step 3a: SAML 2.0</a><ul class="toc-headings"><li><a href="#okta-with-saml-20">Okta with SAML 2.0</a></li><li><a href="#important">Important!</a></li><li><a href="#keycloak-with-saml-20">Keycloak with SAML 2.0</a></li></ul></li><li><a href="#step-3b-openid-connect">Step 3b: OpenID Connect</a><ul class="toc-headings"><li><a href="#okta-with-openid-connect">Okta with OpenID Connect</a></li></ul></li><li><a href="#step-3c-google-authentication">Step 3c: Google Authentication</a></li><li><a href="#step-4-verify">Step 4: Verify</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/Logo_White_Transparent_Horizontal.png" alt="" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/user_guide/index.html">Getting Started</a><a href="/docs/api/client/features.html">API Reference</a></div><div><h5>Community</h5><a href="/users.html">User Showcase</a><a href="https://join.slack.com/t/unleash-community/shared_invite/enQtNjUxMjU2MDc0MTAxLTJjYmViYjkwYmE0ODVlNmY1YjcwZGRmZWU5MTU1YTQ1Nzg5ZWQ2YzBlY2U1MjlmZDg5ZDRmZTMzNmQ5YmEyOGE" target="_blank" rel="noreferrer noopener">Slack community</a><a href="https://www.getunleash.io">getunleash.io</a><a href="https://twitter.com/Unleash_hosted" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/Unleash/unleash">GitHub</a><a class="github-button" href="https://github.com/unleash/unleash" data-icon="octicon-star" data-count-href="/unleash/unleash/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
